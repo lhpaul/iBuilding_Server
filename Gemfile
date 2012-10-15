@@ -22,3 +22,5 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem 'heroku'
 gem 'thin', :group => :production
 
+gem 'mongo'
+gem 'bson_ext'
