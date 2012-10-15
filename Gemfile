@@ -20,3 +20,4 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 
 ##agregados por mi
 gem 'heroku'
+gem 'thin', :group => :production
