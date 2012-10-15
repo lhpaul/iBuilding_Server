@@ -121,3 +121,13 @@ Processing by HomeController#index as HTML
   Rendered layouts/_navigation.html.erb (2.2ms)
   Rendered layouts/_messages.html.erb (0.6ms)
 Completed 200 OK in 104ms (Views: 103.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-15 12:41:12 -0300
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (2.8632ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3889ms)
+  Rendered home/index.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 84ms (Views: 83.4ms)
