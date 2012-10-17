@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="User" tests="6" time="0.139799" failures="0" errors="0" skipped="0">
+  <testcase name="User should accept valid email addresses" time="0.034741">
+  </testcase>
+  <testcase name="User should require an email address" time="0.02585">
+  </testcase>
+  <testcase name="User should create a new instance given a valid attribute" time="0.011996">
+  </testcase>
+  <testcase name="User should reject invalid email addresses" time="0.027666">
+  </testcase>
+  <testcase name="User should reject email addresses identical up to case" time="0.018941">
+  </testcase>
+  <testcase name="User should reject duplicate email addresses" time="0.01991">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>

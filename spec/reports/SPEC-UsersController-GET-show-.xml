@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UsersController GET 'show'" tests="2" time="0.123347" failures="0" errors="0" skipped="0">
+  <testcase name="UsersController GET 'show' should be successful" time="0.103895">
+  </testcase>
+  <testcase name="UsersController GET 'show' should find the right user" time="0.01894">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>
