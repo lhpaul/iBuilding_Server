@@ -26,3 +26,5 @@ gem 'thin', :group => :production
 
 gem 'mongo'
 gem 'bson_ext'
+
+gem 'ci_reporter'
