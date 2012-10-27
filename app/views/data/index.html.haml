@@ -1,0 +1,32 @@
+%h2 Listing data
+%div.alert.alert-block
+  %strong API send Data
+  %p http://ibuildingserver.herokuapp.com/sendData
+%pre.prettyprint.linenums
+  :plain   
+    {
+      "data" : { 
+                  "id_dispositivo": "1",
+                   "tipo": "temperatura",
+                    "data": "15" 
+                }
+    }
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Fecha
+      %th Id
+      %th Tipo
+      %th Data
+    %tbody
+      - @data.each do |datum|
+        %tr
+          %td 
+            = datum.date
+          %td
+            = datum.id_dispositivo
+          %td
+            = datum.tipo
+          %td
+            = datum.data

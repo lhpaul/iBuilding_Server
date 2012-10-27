@@ -3,7 +3,7 @@ ruby '1.9.3'
 gem 'rails', '3.2.8'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', branch: '3-2-stable'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -28,3 +28,8 @@ gem 'mongo'
 gem 'bson_ext'
 
 gem 'ci_reporter', :group => [:development, :test]
+
+
+#extras
+gem "haml-rails"
+gem "twitter-bootstrap-rails", "~> 2.1.4"
