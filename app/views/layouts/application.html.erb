@@ -14,7 +14,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 
       <div class="navbar-inner">
-        <div class="container">        
+        <div class="ccontainer-fluid">        
           <div class="nav-collapse collapse">         
           <%= render 'layouts/navigation' %>
           
@@ -23,20 +23,21 @@
       </div>   
     </div>
 
-<div class="container">
+<div class="container-fluid">
+<div class="row-fluid" >
 
-  <div class="hero-unit">
-    <%= render 'layouts/messages' %>
-         <%= yield %>
-      
-      </div>
+  <%= render 'layouts/messages' %>
+    <div class="hero-unit">
+  <%= yield %>
+</div>
+
+        <footer>
+          <p>© Company 2012</p>
+        </footer>
 
 
-      <footer>
-        <p>© Company 2012</p>
-      </footer>
-
-    </div>
+</div>
+</div>
 
 
   </body>

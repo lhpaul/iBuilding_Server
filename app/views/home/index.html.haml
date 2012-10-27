@@ -1,0 +1,44 @@
+
+- if user_signed_in?
+  %h3 Devices
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Ip     
+    %tbody
+      -if Device.count > 0
+        - Device.all.each do |device|
+          %tr
+            %td 
+              = device.name
+            %td
+              = device.ip
+      -else
+        %div.alert.alert-error No existen dispositivos
+  %h3 Data
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Fecha
+        %th Id
+        %th Tipo
+        %th Data
+    %tbody
+      - Datum.all.each do |datum|
+        %tr
+          %td 
+            = datum.date
+          %td
+            = datum.id_dispositivo
+          %td
+            = datum.tipo
+          %td
+            = datum.data        
+
+
+- else  
+  %h2 Bienvenido a iBuilding!
+  %a.btn.btn-large{ :href => "users/sign_in"}
+    Login
+  
