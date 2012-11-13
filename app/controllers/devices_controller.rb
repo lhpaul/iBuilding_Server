@@ -1,5 +1,6 @@
 class DevicesController < ApplicationController
   before_filter :authenticate_user!
+  require 'rest_client'
   # GET /devices
   # GET /devices.json
   def index
@@ -15,6 +16,12 @@ class DevicesController < ApplicationController
   # GET /devices/1.json
   def show
     @device = Device.find(params[:id])
+    url = @device.ip + "/info"
+    begin
+      @response = JSON.parse(RestClient.get url)
+    rescue Exception=>e
+      @response = false
+    end
 
     respond_to do |format|
       format.html # show.html.erb

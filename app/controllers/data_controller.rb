@@ -16,6 +16,9 @@ def process_data
 
   @datum.date = Time.now
 
+  #checkear si esta el ip
+  if Device.where(ip: request.remote_ip.to_s ).count > 0
+
     respond_to do |format|
       if @datum.save
         format.html { redirect_to @datum, notice: 'Datum was successfully created.' }
@@ -25,6 +28,8 @@ def process_data
         format.json { render json: @datum.errors, status: :unprocessable_entity }
       end
     end
+
+  end
 
 end
 

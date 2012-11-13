@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
+ 
+  <% if @device.permisos?(current_user.id) && @response %>
 
 <p>
-  <b>Name:</b>
-  <%= @device.name %>
+  
+  <%= @response["name"] %>
 </p>
 
 <p>
@@ -10,6 +12,32 @@
   <%= @device.ip %>
 </p>
 
+<% @response["links"].each do |link| %>
+<p>
+
+
+<%= link_to( "#{link['label']}", "#{link['url']}", :class => "btn" )  %>
+
+</p>
+
+<% end %>
+
 
 <%= link_to 'Edit', edit_device_path(@device) %> |
 <%= link_to 'Back', devices_path %>
+
+
+<% else %>
+<div class="alert alert-error">
+  <% if @response %>
+    <p>No tienes permiso para modificar este dispositivo</p>
+    <p>Hasta el momento solo admin@ibuilding.com, 123123 tiene acceso</p>
+  <% else %>
+    <p>Formato erroneo info dispositivo</p>
+  <% end %>
+
+
+
+</div>
+
+<% end %>

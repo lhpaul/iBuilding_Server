@@ -1,4 +1,6 @@
 Rails3MongoidDevise::Application.routes.draw do
+  resources :device_users
+
   resources :data
 
   resources :devices

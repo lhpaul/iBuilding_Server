@@ -11,7 +11,7 @@
         - Device.all.each do |device|
           %tr
             %td 
-              = device.name
+              = link_to device.name, device
             %td
               = device.ip
       -else
