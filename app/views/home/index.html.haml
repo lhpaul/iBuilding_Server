@@ -36,6 +36,19 @@
           %td
             = datum.data        
 
+  %h3 Request
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Fecha
+        %th Id
+        %th Tipo
+        %th Data
+    %tbody
+      - Request.all.each do |req|
+        %tr
+          %td 
+            = req.ip        
 
 - else  
   %h2 Bienvenido a iBuilding!

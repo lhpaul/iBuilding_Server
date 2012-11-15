@@ -15,7 +15,7 @@ def process_data
   @datum = Datum.new(params[:data])
 
   @datum.date = Time.now
-
+  Request.create(:ip => request.remote_ip.to_s)
   #checkear si esta el ip
   if Device.where(ip: request.remote_ip.to_s ).count > 0
 
@@ -28,7 +28,12 @@ def process_data
         format.json { render json: @datum.errors, status: :unprocessable_entity }
       end
     end
-
+    #ip no reconocido
+  else
+    respond_to do |format|     
+      format.html { render action: "new" }
+      format.json { render json: " ", status: 401 }
+    end
   end
 
 end

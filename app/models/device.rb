@@ -2,6 +2,7 @@ class Device
   include Mongoid::Document
   field :name, type: String
   field :ip, type: String
+  field :api, type: String
   field :info, type: String
 
   attr_accessible :name, :ip
