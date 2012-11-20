@@ -1,6 +1,7 @@
 class DataController < ApplicationController
   # GET /data
   # GET /data.json
+  before_filter :authenticate_user!, :except => [:process_data, :index, :show]
   def index
     @data = Datum.all
 
@@ -15,16 +16,17 @@ def process_data
   @datum = Datum.new(params[:data])
 
   @datum.date = Time.now
-  Request.create(:ip => request.remote_ip.to_s)
+  Request.create(:ip => request.remote_ip.to_s, :date => Time.now)
   #checkear si esta el ip
   if Device.where(ip: request.remote_ip.to_s ).count > 0
 
+
     respond_to do |format|
       if @datum.save
-        format.html { redirect_to @datum, notice: 'Datum was successfully created.' }
+        #format.html { redirect_to @datum, notice: 'Datum was successfully created.' }
         format.json { render json: @datum, status: :created, location: @datum }
       else
-        format.html { render action: "new" }
+        #format.html { render action: "new" }
         format.json { render json: @datum.errors, status: :unprocessable_entity }
       end
     end

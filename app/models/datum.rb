@@ -6,4 +6,6 @@ class Datum
   field :date, type: DateTime
 
   attr_accessible :id_dispositivo, :tipo, :data, :date
+
+  
 end

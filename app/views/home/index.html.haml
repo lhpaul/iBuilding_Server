@@ -25,7 +25,7 @@
         %th Tipo
         %th Data
     %tbody
-      - Datum.all.each do |datum|
+      - Datum.desc(:date).limit(100).each do |datum|
         %tr
           %td 
             = datum.date
@@ -40,15 +40,16 @@
   %table.table.table-hover
     %thead
       %tr
-        %th Fecha
-        %th Id
-        %th Tipo
-        %th Data
+        %th Ip
+        %th Date
     %tbody
-      - Request.all.each do |req|
+      - Request.desc(:date).limit(100).each do |req|
         %tr
           %td 
-            = req.ip        
+            = req.ip
+          %td 
+            = req.date
+
 
 - else  
   %h2 Bienvenido a iBuilding!

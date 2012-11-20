@@ -16,7 +16,7 @@ class DevicesController < ApplicationController
   # GET /devices/1.json
   def show
     @device = Device.find(params[:id])
-    url = @device.ip + "/info"
+    url = @device.api + "/info"
     begin
       @response = JSON.parse(RestClient.get url)
     rescue Exception=>e

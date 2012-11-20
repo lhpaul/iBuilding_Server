@@ -12,8 +12,8 @@ user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :pas
 puts 'New user created: ' << user2.name
 
 #devices
-Device.create(:name => "luz", :ip => "arqui15.ing.puc.cl:8080" )
-Device.create(:name => "Temperatura", :ip => "arqui12.ing.puc.cl:8080" )
+Device.create(:name => "luz", :ip => "" )
+Device.create(:name => "Temperatura", :ip => "146.155.13.182", :api => "arqui12.ing.puc.cl:8080" )
 
 #permisos
 DeviceUser.create(:id_dispositivo => Device.all[0].id, :id_user => User.first.id)

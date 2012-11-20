@@ -5,7 +5,7 @@ class Device
   field :api, type: String
   field :info, type: String
 
-  attr_accessible :name, :ip
+  attr_accessible :name, :ip, :api
 
 #checkear si existe el permiso
   def permisos?(id)
