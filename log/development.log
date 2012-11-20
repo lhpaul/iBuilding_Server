@@ -7409,3 +7409,101 @@ Processing by HomeController#index as HTML
   Rendered layouts/_navigation.html.erb (1.6ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 217ms (Views: 216.0ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6390ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"email"=>"admin@ibuilding.com"} flags=[:slave_ok] limit=1 skip=0 fields={:_id=>1} (0.2658ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-20 12:20:52 -0300
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6690ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2975ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{}} (0.3977ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2289ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=data selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.4222ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=requests selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.5267ms)
+  Rendered home/index.html.haml within layouts/application (118.4ms)
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 380ms (Views: 379.2ms)
+
+
+Started GET "/devices" for 127.0.0.1 at 2012-11-20 12:20:57 -0300
+Processing by DevicesController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5596ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3037ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.5889ms)
+  Rendered devices/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 162ms (Views: 96.1ms)
+
+
+Started GET "/devices/50ab96d62a2039cd1b000004/edit" for 127.0.0.1 at 2012-11-20 12:21:00 -0300
+Processing by DevicesController#edit as HTML
+  Parameters: {"id"=>"50ab96d62a2039cd1b000004"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.9058ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4692ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ab96d62a2039cd1b000004"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3197ms)
+  Rendered devices/_form.html.erb (24.6ms)
+  Rendered devices/edit.html.erb within layouts/application (32.6ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 134ms (Views: 128.7ms)
+
+
+Started PUT "/devices/50ab96d62a2039cd1b000004" for 127.0.0.1 at 2012-11-20 12:21:08 -0300
+Processing by DevicesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WLrDvsqZtlnK5HLvnb7c3u4ngUWpYzs6L/NYMYoTBrg=", "device"=>{"name"=>"Temperatura", "ip"=>"127.0.0.1", "api"=>"arqui12.ing.puc.cl:8080", "info"=>""}, "commit"=>"Update Device", "id"=>"50ab96d62a2039cd1b000004"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6886ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4325ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ab96d62a2039cd1b000004"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3350ms)
+WARNING: Can't mass-assign protected attributes: info
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ab96d62a2039cd1b000004"} update={"$set"=>{"ip"=>"127.0.0.1"}} flags=[] (0.1431ms)
+Redirected to http://localhost:3000/devices/50ab96d62a2039cd1b000004
+Completed 302 Found in 9ms
+
+
+Started GET "/devices/50ab96d62a2039cd1b000004" for 127.0.0.1 at 2012-11-20 12:21:08 -0300
+Processing by DevicesController#show as HTML
+  Parameters: {"id"=>"50ab96d62a2039cd1b000004"}
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4694ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ab96d62a2039cd1b000004"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.1731ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"device_users", :query=>{"id_user"=>"50ab96d52a2039cd1b000001", "id_dispositivo"=>"50ab96d62a2039cd1b000004"}} (0.4897ms)
+  Rendered devices/show.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 129ms (Views: 108.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-20 12:21:13 -0300
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5329ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2623ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{}} (0.3428ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2522ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=data selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.6356ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=requests selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.4106ms)
+  Rendered home/index.html.haml within layouts/application (7.1ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 77ms (Views: 76.3ms)
+
+
+Started POST "/sendData" for 127.0.0.1 at 2012-11-20 12:21:22 -0300
+Processing by DataController#process_data as */*
+  Parameters: {"data"=>{"id_dispositivo"=>"1", "tipo"=>"temperatura3", "data"=>"15"}, "datum"=>{"data"=>{"id_dispositivo"=>"1", "tipo"=>"temperatura3", "data"=>"15"}}}
+WARNING: Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.6614ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.3397ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=requests documents=[{"_id"=>"50ab9ff22a20398324000001", "ip"=>"127.0.0.1", "date"=>2012-11-20 15:21:22 UTC}] flags=[] (0.3011ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{"ip"=>"127.0.0.1"}} (0.3397ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=data documents=[{"_id"=>"50ab9ff22a20398324000002", "id_dispositivo"=>1, "tipo"=>"temperatura3", "data"=>"15", "date"=>2012-11-20 15:21:22 UTC}] flags=[] (0.2661ms)
+Completed 201 Created in 75ms (Views: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-20 12:22:18 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 52.2ms)
