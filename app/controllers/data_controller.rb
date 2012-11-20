@@ -1,7 +1,7 @@
 class DataController < ApplicationController
   # GET /data
   # GET /data.json
-  before_filter :authenticate_user!, :except => [:process_data, :index, :show]
+  before_filter :authenticate_user!, :except => [:process_data, :index, :show, :create]
   def index
     @data = Datum.all
 
