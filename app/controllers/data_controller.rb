@@ -1,7 +1,7 @@
 class DataController < ApplicationController
   # GET /data
   # GET /data.json
-  before_filter :authenticate_user!, :except => [:process_data, :index, :show, :create]
+  before_filter :authenticate_user!, :except => [:process_data, :index, :show]
   def index
     @data = Datum.all
 
@@ -33,7 +33,7 @@ def process_data
     #ip no reconocido
   else
     respond_to do |format|     
-      format.html { render action: "new" }
+      #format.html { render action: "new" }
       format.json { render json: " ", status: 401 }
     end
   end
