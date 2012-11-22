@@ -1,54 +1,21 @@
 
 - if user_signed_in?
-  %h3 Devices
+  %h3 Rooms
   %table.table.table-hover
     %thead
       %tr
         %th Name
-        %th Ip     
+        %th n dispositivos  
     %tbody
-      -if Device.count > 0
-        - Device.all.each do |device|
+      -if Room.count > 0
+        - Room.all.each do |room|
           %tr
             %td 
-              = link_to device.name, device
+              = link_to room.name, room
             %td
-              = device.ip
+              = room.devices.count
       -else
-        %div.alert.alert-error No existen dispositivos
-  %h3 Data
-  %table.table.table-hover
-    %thead
-      %tr
-        %th Fecha
-        %th Id
-        %th Tipo
-        %th Data
-    %tbody
-      - Datum.desc(:date).limit(100).each do |datum|
-        %tr
-          %td 
-            = datum.date
-          %td
-            = datum.id_dispositivo
-          %td
-            = datum.tipo
-          %td
-            = datum.data        
-
-  %h3 Request
-  %table.table.table-hover
-    %thead
-      %tr
-        %th Ip
-        %th Date
-    %tbody
-      - Request.desc(:date).limit(100).each do |req|
-        %tr
-          %td 
-            = req.ip
-          %td 
-            = req.date
+        %div.alert.alert-error No existen piezas
 
 
 - else  

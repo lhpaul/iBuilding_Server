@@ -7507,3 +7507,204 @@ Processing by HomeController#index as HTML
   Rendered layouts/_navigation.html.erb (1.2ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 53ms (Views: 52.2ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.2968ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"rooms", :query=>{}} (126.1001ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=rooms documents=[{"_id"=>"50ada1082a2039d50a000001", "name"=>"Prueba"}] flags=[] (0.2098ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7308ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7265ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4570ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.8013ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.8214ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=rooms documents=[{"_id"=>"50ada14b2a2039f30a000001", "name"=>"Temperatura"}] flags=[] (0.2279ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7288ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6506ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=rails3_mongoid_devise_development collection=devices documents=[{"_id"=>"50ada1662a2039f30a000002", "name"=>"Temperatura"}] flags=[] (0.1554ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7935ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-22 00:52:30 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.haml within layouts/application (40.1ms)
+Compiled rooms.css  (16ms)  (pid 2513)
+Compiled application.css  (104ms)  (pid 2513)
+Compiled rooms.js  (80ms)  (pid 2513)
+Compiled application.js  (172ms)  (pid 2513)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 2403ms (Views: 2402.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-11-22 00:52:35 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered /home/agrass/.rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (51.9ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 189ms (Views: 187.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-11-22 00:52:45 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t5y8OYi7Ak8XuW5RKgApMI69mkMg83v91RwrgGyl6uY=", "user"=>{"email"=>"admin@ibuilding.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.9680ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"email"=>"admin@ibuilding.com"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7212ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=users selector={"_id"=>"50ab96d52a2039cd1b000001"} update={"$set"=>{"last_sign_in_at"=>2012-11-20 15:03:57 UTC, "current_sign_in_at"=>2012-11-22 03:52:45 UTC, "sign_in_count"=>5, "updated_at"=>2012-11-22 03:52:45 UTC}} flags=[] (0.2661ms)
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-22 00:52:45 -0300
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7682ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{}} (0.4077ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2973ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=data selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.5064ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=requests selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (10.3695ms)
+  Rendered home/index.html.haml within layouts/application (144.8ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 236ms (Views: 235.6ms)
+
+
+Started GET "/devices/50ada1662a2039f30a000002" for 127.0.0.1 at 2012-11-22 00:52:56 -0300
+Processing by DevicesController#show as HTML
+  Parameters: {"id"=>"50ada1662a2039f30a000002"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.8876ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.5217ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ada1662a2039f30a000002"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4370ms)
+Completed 500 Internal Server Error in 7ms
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/devices_controller.rb:19:in `show'
+
+
+  Rendered /home/agrass/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/agrass/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /home/agrass/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started GET "/devices/50ab96d62a2039cd1b000003" for 127.0.0.1 at 2012-11-22 00:53:00 -0300
+Processing by DevicesController#show as HTML
+  Parameters: {"id"=>"50ab96d62a2039cd1b000003"}
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6697ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ab96d62a2039cd1b000003"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4251ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"device_users", :query=>{"id_user"=>"50ab96d52a2039cd1b000001", "id_dispositivo"=>"50ab96d62a2039cd1b000003"}} (0.5260ms)
+  Rendered devices/show.html.erb within layouts/application (58.7ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 257ms (Views: 149.7ms)
+
+
+Started GET "/devices/50ab96d62a2039cd1b000004" for 127.0.0.1 at 2012-11-22 00:53:04 -0300
+Processing by DevicesController#show as HTML
+  Parameters: {"id"=>"50ab96d62a2039cd1b000004"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7827ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.5472ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ab96d62a2039cd1b000004"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3836ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"device_users", :query=>{"id_user"=>"50ab96d52a2039cd1b000001", "id_dispositivo"=>"50ab96d62a2039cd1b000004"}} (0.7472ms)
+  Rendered devices/show.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 264ms (Views: 128.3ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7234ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6890ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7162ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7446ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6618ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7546ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7408ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2799ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7541ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"$query"=>{}, "$orderby"=>{:_id=>-1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7527ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"$query"=>{}, "$orderby"=>{:_id=>-1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7577ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7174ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7195ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4423ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7734ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7513ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4497ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.7350ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-22 01:03:21 -0300
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5314ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2773ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{}} (0.4044ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2866ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=data selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.5360ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=requests selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.5558ms)
+  Rendered home/index.html.haml within layouts/application (68.2ms)
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 166ms (Views: 165.9ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.1296ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.5322ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.5596ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6700ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"room_id"=>"50ada1082a2039d50a000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3853ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.5167ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.2418ms)
+  MOPED: 127.0.0.1:27017 UPDATE       database=rails3_mongoid_devise_development collection=devices selector={"_id"=>"50ab96d62a2039cd1b000003"} update={"$set"=>{"room_id"=>"50ada1082a2039d50a000001"}} flags=[] (0.1626ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"room_id"=>"50ada1082a2039d50a000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2952ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"$query"=>{}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.5879ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"room_id"=>"50ada1082a2039d50a000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3448ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-22 01:09:27 -0300
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.2622ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6893ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"rooms", :query=>{}} (0.4396ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4504ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{"room_id"=>"50ada1082a2039d50a000001"}} (0.5975ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{"room_id"=>"50ada14b2a2039f30a000001"}} (0.4821ms)
+  Rendered home/index.html.haml within layouts/application (80.6ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 155ms (Views: 154.5ms)
+
+
+Started GET "/rooms/50ada1082a2039d50a000001" for 127.0.0.1 at 2012-11-22 01:09:30 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"50ada1082a2039d50a000001"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.5472ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"_id"=>"50ada1082a2039d50a000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.2015ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.6986ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{"room_id"=>"50ada1082a2039d50a000001"}} (0.4342ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=devices selector={"room_id"=>"50ada1082a2039d50a000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.4296ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=data selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.5219ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=requests selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.6125ms)
+  Rendered rooms/show.html.haml within layouts/application (24.2ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 115ms (Views: 111.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-22 01:09:40 -0300
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.8209ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.4814ms)
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"rooms", :query=>{}} (0.5369ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3779ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{"room_id"=>"50ada1082a2039d50a000001"}} (0.5956ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{"room_id"=>"50ada14b2a2039f30a000001"}} (0.4611ms)
+  Rendered home/index.html.haml within layouts/application (9.2ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 97ms (Views: 97.0ms)
+
+
+Started GET "/rooms/50ada14b2a2039f30a000001" for 127.0.0.1 at 2012-11-22 01:09:50 -0300
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"50ada14b2a2039f30a000001"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7720ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=rooms selector={"_id"=>"50ada14b2a2039f30a000001"} flags=[:slave_ok] limit=0 skip=0 fields=nil (0.3271ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=users selector={"$query"=>{"_id"=>"50ab96d52a2039cd1b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 fields=nil (0.5960ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=rails3_mongoid_devise_development command={:count=>"devices", :query=>{"room_id"=>"50ada14b2a2039f30a000001"}} (0.4458ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=data selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.4594ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=rails3_mongoid_devise_development collection=requests selector={"$query"=>{}, "$orderby"=>{"date"=>-1}} flags=[:slave_ok] limit=100 skip=0 fields=nil (0.5527ms)
+  Rendered rooms/show.html.haml within layouts/application (9.6ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 124ms (Views: 121.2ms)
