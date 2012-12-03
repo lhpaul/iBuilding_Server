@@ -33,3 +33,4 @@ gem 'ci_reporter', :group => [:development, :test]
 #extras
 gem "haml-rails"
 gem "twitter-bootstrap-rails", "~> 2.1.4"
+

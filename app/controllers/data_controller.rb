@@ -16,7 +16,9 @@ def process_data
   @datum = Datum.new(params[:data])
 
   @datum.date = Time.now
-  Request.create(:ip => request.remote_ip.to_s, :date => Time.now)
+  if !Request.where(ip: request.remote_ip.to_s ).count > 0
+    Request.create(:ip => request.remote_ip.to_s, :date => Time.now)
+  end
   #checkear si esta el ip
   if Device.where(ip: request.remote_ip.to_s ).count > 0
 

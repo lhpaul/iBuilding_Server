@@ -16,5 +16,6 @@ Device.create(:name => "luz", :ip => "" )
 Device.create(:name => "Temperatura", :ip => "146.155.13.182", :api => "arqui12.ing.puc.cl:8080" )
 
 #permisos
-DeviceUser.create(:id_dispositivo => Device.all[0].id, :id_user => User.first.id)
-DeviceUser.create(:id_dispositivo => Device.all[1].id, :id_user => User.first.id)
+DeviceUser.create(:id_dispositivo => Device.all[0].id, :id_user => User.last.id)
+DeviceUser.create(:id_dispositivo => Device.all[1].id, :id_user => User.last.id)
+
